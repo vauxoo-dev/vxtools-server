@@ -51,8 +51,15 @@ class VxVcsBase(object):
 
     def get_branch_info(self, password=False):
         '''
-        Retuns remore url
+        Retuns a brach info
+            {
+              'type': 'bzr'|'git',
+              'branch': branch_ref_or_name,
+              'rev_id': commit_hash,
+              'folder_name': folder_where_brach|repo_will_be_cloned,
+              'status': 'dirty|clean'
+            }
 
-        :returns: A string containing the repo url
+        :returns: json with the brach information
         '''
         raise NotImplementedError
